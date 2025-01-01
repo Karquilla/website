@@ -6,16 +6,16 @@ import styles from '../app/app.module.css';
 
 const Page = () => {
 
-  const p5button = () => {
-    // Some logic before navigating
-    return ;
-  };
+  //const p5button = () => {
+  //  // Some logic before navigating
+  //  return ;
+  //};
 
   useEffect(() => {
     const contents = document.querySelectorAll<HTMLElement>(`.${styles.content}`);
 
     // Function to handle observing entries
-    const handleIntersection = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add(styles.show);
