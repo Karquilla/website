@@ -64,7 +64,7 @@ const Astar = ({ columns = 40, rows = 20, cellSize = 25 }) => {
   //
   //const pop = (setArray) => {
   //  setArray((prevArray) => prevArray.slice(0, -1));
-  //};
+  ///};
 
   //const removeFromArray = (id, setArray, Node) => {
   //  setArray.findIndex((Node) => Node.id === id);
