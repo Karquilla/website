@@ -27,7 +27,7 @@ const Page = () => {
 
     const observer = new IntersectionObserver(handleIntersection, {
       threshold: 0.5, // Trigger when 50% of the element is visible
-      rootMargin: '0px 0px -30% 0px', // Shifts the trigger point to the middle of the viewport
+      rootMargin: '0px 0px -5% 0px', // Shifts the trigger point to the middle of the viewport
     });
 
     contents.forEach((content) => {

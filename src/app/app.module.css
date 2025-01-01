@@ -1,11 +1,12 @@
 /* app.module.css */
 
 .section {
-    padding: 300px 20px; /* Increase padding to make each section taller */
-    margin-bottom: 10px; /* Add margin to create more space between sections */
+    padding: 200px 20px;  /*Increase padding to make each section taller */
+    margin-top: 25vh; /* Add margin to create more space between sections */
     text-align: center;
+    justify-content: center;
     background-color: transparent;  /*Light background color for contrast */
-    min-height: 800px;
+    transform: translateY(20px);
   }
   
   .content {
