@@ -1,16 +1,8 @@
 'use client';
 import { useEffect } from 'react';
-import ParallaxBackground from '@/components/ParallaxSpace'; 
-import Link from 'next/link';
-import styles from '../app/app.module.css';
+import styles from '../p5collection/p5collection.module.css';
 
 const Page = () => {
-
-  const p5button = () => {
-    // Some logic before navigating
-    return ;
-  };
-
   useEffect(() => {
     const contents = document.querySelectorAll<HTMLElement>(`.${styles.content}`);
 
@@ -40,28 +32,26 @@ const Page = () => {
   }, []);
 
   return (
-    <ParallaxBackground>
+    <>
       <section className={styles.section}>
-        <span className={styles.content}>Hello, My name is Kyle Arquilla!</span>
+        <span className={styles.content}>project one</span>
       </section>
       <section className={styles.section}>
-        <span className={styles.content}>BIO</span>
+        <span className={styles.content}>Lorem ipsum dolor</span>
       </section>
       <section className={styles.section}>
-      <Link href="/AStar">
-        <button className={styles.content} >A-Star Path Finder</button>
-      </Link>
+        <span className={styles.content}>Lorem ipsum dolor</span>
       </section>
       <section className={styles.section}>
-        <span className={styles.content}>Keep scrolling for more animations!</span>
+        <span className={styles.content}>Lorem ipsum dolor</span>
       </section>
       <section className={styles.section}>
-        <span className={styles.content}>Keep scrolling for more animations!</span>
+        <span className={styles.content}>Lorem ipsum dolor</span>
       </section>
       <section className={styles.section}>
-        <span className={styles.content}>Keep scrolling for more animations!</span>
+        <span className={styles.content}>Lorem ipsum dolor</span>
       </section>
-    </ParallaxBackground>
+    </>
   );
 };
 

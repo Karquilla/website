@@ -1,0 +1,15 @@
+.layout {
+    display: flex; /* Flex container for the whole page */
+    justify-content: top;
+    align-content: center;
+    
+  }
+  
+  .content {
+    display: flex;
+    flex: 1;
+    background-color: var(--background);
+    flex-direction: column;
+    justify-content: top;
+    align-content: center;
+  }
