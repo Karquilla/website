@@ -51,7 +51,7 @@ const Page = () => {
         }}>
           <div className={styles.h1}>Hello, My name is Kyle Arquilla!</div>
             <p>
-            I'm a computer science student at Kent State University with a passion for programming and computers.
+              I&apos;m a computer science student at Kent State University with a passion for programming and computers.
             </p>
           </div>
       </section>
