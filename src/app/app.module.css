@@ -1,8 +1,8 @@
 /* app.module.css */
 
 .section {
-    padding: 200px 20px;  /*Increase padding to make each section taller */
-    margin-top: 25vh; /* Add margin to create more space between sections */
+    padding: 200px;  /*Increase padding to make each section taller */
+    /*margin-top: 25vh;  Add margin to create more space between sections */
     text-align: center;
     justify-content: center;
     background-color: transparent;  /*Light background color for contrast */
@@ -13,15 +13,31 @@
     color: #000; /* Set a default text color */
     background-color: #fff; /* White background for better visibility */
     border: 2px solid #000; /* Black border for better visibility */
-    padding: 20px;
+    padding: 10px 20px;
     display: text;
     opacity: 0; /* Initially hidden */
     transform: translateY(20px); /* Initially translate downwards */
     transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth fade-in effect */
-    font-weight: bold;
+    line-height: '1.6';
+    margin: 0 auto;
+    max-width: 600px;
   }
   
+  
+  .h1 {
+      display: flex;
+      color: #000;
+      justify-content: center;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 22px;
+      font-weight: bold;
+      
+  } 
+
   .show {
     opacity: 1; /* Make it visible */
     transform: translateY(0); /* Reset transformation */
   }
+
+  

@@ -42,7 +42,7 @@ export default function ParallaxBackground({
         }}
       >
         <img
-          src="/Night sky v2xx.png" // make sure it's in /public
+          src="/NightSkyV2xx.png" // make sure it's in /public
           alt="Night Sky"
           style={{
             position: 'absolute',

@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import ParallaxBackground from '@/components/ParallaxSpace'; 
 import Link from 'next/link';
 import styles from '../app/app.module.css';
+import { Analytics } from "@vercel/analytics/react"
 
 const Page = () => {
 
@@ -41,11 +42,25 @@ const Page = () => {
 
   return (
     <ParallaxBackground>
-      <section className={styles.section}>
-        <span className={styles.content}>Hello, My name is Kyle Arquilla!</span>
+      <section style={{
+        paddingTop: '20vh',
+      }}>
       </section>
       <section className={styles.section}>
-        <span className={styles.content}>BIO</span>
+        <div className={styles.content} style={{
+        }}>
+          <div className={styles.h1}>Hello, My name is Kyle Arquilla!</div>
+            <p>
+            I'm a computer science student at Kent State University with a passion for programming and computers.
+            </p>
+          </div>
+      </section>
+      <section className={styles.section}>
+        <div className={styles.content}>
+          <span className={styles.h1}>
+          BIO
+          </span>
+        </div>
       </section>
       <section className={styles.section}>
       <Link href="/AStar">
@@ -61,6 +76,7 @@ const Page = () => {
       <section className={styles.section}>
         <span className={styles.content}>Keep scrolling for more animations!</span>
       </section>
+    <Analytics />
     </ParallaxBackground>
   );
 };
