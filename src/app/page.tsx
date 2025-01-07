@@ -1,6 +1,7 @@
 'use client';
 import { useEffect } from 'react';
 import ParallaxBackground from '@/components/ParallaxSpace'; 
+
 import Link from 'next/link';
 import styles from '../app/app.module.css';
 import { Analytics } from "@vercel/analytics/react"
@@ -41,6 +42,7 @@ const Page = () => {
   }, []);
 
   return (
+    
     <ParallaxBackground>
       <section style={{
         paddingTop: '20vh',
@@ -78,6 +80,7 @@ const Page = () => {
       </section>
     <Analytics />
     </ParallaxBackground>
+    
   );
 };
 

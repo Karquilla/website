@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect, useState, ReactNode } from 'react';
+import MovingImage from '@/components/ufo'
 
 // Optional: Type definition
 interface ParallaxBackgroundProps {
@@ -59,10 +60,11 @@ export default function ParallaxBackground({
             height: 'auto',
           }}
         />
+        <MovingImage />
       </div>
-
+      
       {/* Main content that scrolls on top */}
-      <div style={{ position: 'relative' }}>{children}</div>
+      <div style={{}}>{children}</div>
     </>
   );
 }
