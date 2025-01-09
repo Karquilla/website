@@ -7,16 +7,16 @@ interface Position {
 }
 
 const MovingImage: React.FC = () => {
-  const [position, setPosition] = useState<Position>({ x: 100, y: 100 });
-  const mouseRef = useRef<Position>({ x: 100, y: 100 });
+  const [position, setPosition] = useState<Position>({ x: -100, y: 100 });
+  const mouseRef = useRef<Position>({ x: 800, y: 200 });
 
   const angleRef = useRef<number>(0);
   const lastTimeRef = useRef<number>(performance.now());
   const requestIdRef = useRef<number>(0);
 
   // Adjustable parameters
-  const arcTightness = 0.6; // Adjust arc curvature (0 = direct line, 1 = full arc)
-  const centerSmoothFactor = 0.2; // Controls how fast the center shifts
+  const arcTightness = 0.55; // Adjust arc curvature (0 = direct line, 1 = full arc)
+  const centerSmoothFactor = 0.1; // Controls how fast the center shifts
 
   const circleCenterRef = useRef<Position>({ x: position.x, y: position.y });
 
@@ -83,7 +83,7 @@ const MovingImage: React.FC = () => {
         // -----------------------------------------
         // D) Move by a small angular step
         // -----------------------------------------
-        const angularSpeed = 2.0; // Adjust speed
+        const angularSpeed = 1.0; // Adjust speed
         const maxStep = angularSpeed * delta;
         const angleStep = Math.abs(angleDiff) < maxStep
           ? angleDiff
