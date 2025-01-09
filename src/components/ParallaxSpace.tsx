@@ -49,12 +49,7 @@ export default function ParallaxBackground({
             position: 'absolute',
             top: 0,
             left: 0,
-            /*
-              The key: we subtract scrollY * factor
-              so it moves *less* than the scrolling content.
-              You can experiment with + or - 
-              depending on how you want the image to move.
-            */
+            //subtract scrollY * factor so it moves *less* than the scrolling content.
             transform: `translateY(${-scrollY * factor}px)`,
             width: '100%',
             height: 'auto',

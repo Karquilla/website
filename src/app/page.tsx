@@ -70,7 +70,9 @@ const Page = () => {
       </Link>
       </section>
       <section className={styles.section}>
-        <span className={styles.content}>Keep scrolling for more animations!</span>
+      <Link href="https://karquilla.github.io/UFO-game/" >
+        <button className={styles.content} >Cosmic Chaos 	&#40;game&#41;</button>
+      </Link>
       </section>
       <section className={styles.section}>
         <span className={styles.content}>Keep scrolling for more animations!</span>

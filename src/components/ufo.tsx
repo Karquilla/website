@@ -6,71 +6,118 @@ interface Position {
   y: number;
 }
 
-const MovingImage = () => {
-  const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
-  const targetRef = useRef<Position>({ x: 0, y: 0 });
-  const lastTimeRef = useRef(performance.now());
+const MovingImage: React.FC = () => {
+  const [position, setPosition] = useState<Position>({ x: 100, y: 100 });
+  const mouseRef = useRef<Position>({ x: 100, y: 100 });
 
-  // Capture the mouse position in a ref
+  const angleRef = useRef<number>(0);
+  const lastTimeRef = useRef<number>(performance.now());
+  const requestIdRef = useRef<number>(0);
+
+  // Adjustable parameters
+  const arcTightness = 0.6; // Adjust arc curvature (0 = direct line, 1 = full arc)
+  const centerSmoothFactor = 0.2; // Controls how fast the center shifts
+
+  const circleCenterRef = useRef<Position>({ x: position.x, y: position.y });
+
   useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      targetRef.current = { x: event.clientX, y: event.clientY };
+    const handleMouseMove = (e: MouseEvent) => {
+      mouseRef.current = { x: e.clientX, y: e.clientY };
     };
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   useEffect(() => {
-    let animationFrameId: number;
+    const animate = (time: number) => {
+      const delta = (time - lastTimeRef.current) / 1000;
+      lastTimeRef.current = time;
 
-    const animate = (timestamp: number) => {
-      // Calculate delta time (in seconds) since last frame
-      const delta = (timestamp - lastTimeRef.current) / 1000;
-      lastTimeRef.current = timestamp;
+      setPosition((prevPos) => {
+        const px = prevPos.x;
+        const py = prevPos.y;
+        const mx = mouseRef.current.x;
+        const my = mouseRef.current.y;
 
-      setPosition((prev) => {
-        const dx = targetRef.current.x - prev.x;
-        const dy = targetRef.current.y - prev.y;
-
-        // Speed in pixels per second
-        const speed = 400; // adjust to taste
-
-        // Distance to move this frame
-        // movement = speed * delta
-        // But we don't want to overshoot if dx, dy is small
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 1) {
-          return prev; // close enough
+        // -----------------------------------------
+        // A) If already very close, snap to target
+        // -----------------------------------------
+        const distToMouse = Math.hypot(mx - px, my - py);
+        if (distToMouse < 0.5) {
+          return { x: mx, y: my };
         }
 
-        // direction vector
-        const angle = Math.atan2(dy, dx);
-        const moveDist = Math.min(dist, speed * delta);
+        // -----------------------------------------
+        // B) Compute Smoothed Circle Center
+        // -----------------------------------------
+        const targetH = px + arcTightness * (mx - px);
+        const targetK = py + arcTightness * (my - py);
 
-        return {
-          x: prev.x + Math.cos(angle) * moveDist,
-          y: prev.y + Math.sin(angle) * moveDist,
-        };
+        // Smooth transition of center over time
+        circleCenterRef.current.x += centerSmoothFactor * (targetH - circleCenterRef.current.x);
+        circleCenterRef.current.y += centerSmoothFactor * (targetK - circleCenterRef.current.y);
+
+        const h = circleCenterRef.current.x;
+        const k = circleCenterRef.current.y;
+
+        // Compute the radius (with clamping)
+        const maxRadius = 400; // Prevents extreme loops
+        let r = Math.sqrt((mx - h) ** 2 + (my - k) ** 2);
+        r = Math.min(r, maxRadius);
+
+        // -----------------------------------------
+        // C) Compute Angles
+        // -----------------------------------------
+        const startAngle = Math.atan2(py - k, px - h);
+        const endAngle = Math.atan2(my - k, mx - h);
+
+        // Initialize angleRef once
+        if (angleRef.current === 0) {
+          angleRef.current = startAngle;
+        }
+
+        // Compute shortest rotation direction
+        let angleDiff = endAngle - angleRef.current;
+        angleDiff = ((angleDiff + Math.PI) % (2 * Math.PI)) - Math.PI;
+
+        // -----------------------------------------
+        // D) Move by a small angular step
+        // -----------------------------------------
+        const angularSpeed = 2.0; // Adjust speed
+        const maxStep = angularSpeed * delta;
+        const angleStep = Math.abs(angleDiff) < maxStep
+          ? angleDiff
+          : Math.sign(angleDiff) * maxStep;
+
+        angleRef.current += angleStep;
+
+        // -----------------------------------------
+        // E) Compute New Position on Arc
+        // -----------------------------------------
+        const newX = h + r * Math.cos(angleRef.current);
+        const newY = k + r * Math.sin(angleRef.current);
+
+        return { x: newX, y: newY };
       });
 
-      animationFrameId = requestAnimationFrame(animate);
+      requestIdRef.current = requestAnimationFrame(animate);
     };
 
-    animationFrameId = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animationFrameId);
+    requestIdRef.current = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(requestIdRef.current);
   }, []);
 
   return (
     <img
-      src="/ufo.png"
-      alt="Moving UFO"
-      style={{
-        position: "absolute",
-        left: `${position.x}px`,
-        top: `${position.y}px`,
-        transform: "translate(-50%, -50%)",
-      }}
-    />
+    src="/ufo.png"
+    alt="Moving UFO"
+    style={{
+      position: "absolute",
+      left: `${position.x}px`,
+      top: `${position.y}px`,
+      transform: "translate(-50%, -50%) scale(75%)",
+    }}
+  />
   );
 };
 
