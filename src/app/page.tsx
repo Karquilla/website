@@ -109,7 +109,7 @@ const Page = () => {
                 <strong>Creative Programming:</strong> Various visual programming experiments, including an A* pathfinding visualization.
               </li>
               <li>
-                <strong>Portfolio Website:</strong> The very website you're on, built with React and Next.js.
+                <strong>Portfolio Website:</strong> The very website you&apos;re on, built with React and Next.js.
               </li>
               <li>
                 <strong>Research in Explainable AI (XAI):</strong> Contributed to research exploring transparency in artificial intelligence.
