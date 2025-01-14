@@ -15,8 +15,8 @@ const MovingImage: React.FC = () => {
   const requestIdRef = useRef<number>(0);
 
   // Adjustable parameters
-  const arcTightness = 0.55; // Adjust arc curvature (0 = direct line, 1 = full arc)
-  const centerSmoothFactor = 0.1; // Controls how fast the center shifts
+  const arcTightness = 0.54; // Adjust arc curvature (0 = direct line, 1 = full arc)
+  const centerSmoothFactor = 0.25; // Controls how fast the center shifts
 
   const circleCenterRef = useRef<Position>({ x: position.x, y: position.y });
 

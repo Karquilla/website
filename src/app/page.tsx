@@ -6,6 +6,7 @@ import Link from 'next/link';
 import styles from '../app/app.module.css';
 import { Analytics } from "@vercel/analytics/react"
 
+
 const Page = () => {
 
   //const p5button = () => {
@@ -60,8 +61,62 @@ const Page = () => {
       <section className={styles.section}>
         <div className={styles.content}>
           <span className={styles.h1}>
-          BIO
+            What I Do
           </span>
+          <div className={styles.list}>
+            <p style={{marginBottom: '20px', textAlign: 'center'}}>I enjoy experimenting with code and creating fun projects. Some of my favorite ways to spend my free time include:</p>
+            <ul >
+              <li><strong>Creative Programming:</strong> Building &nbsp;&nbsp;&nbsp;&nbsp;visualizations and experimenting with &nbsp;&nbsp;&nbsp;&nbsp;interactive designs.</li>
+              <li><strong>Game Development:</strong> Designing and coding &nbsp;&nbsp;&nbsp;&nbsp;engaging games.</li>
+              <li><strong>Skill Building:</strong> Continuously improving my &nbsp;&nbsp;&nbsp;&nbsp;coding and problem-solving abilities.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section className={styles.section}>
+        <div className={styles.content}>
+          <span className={styles.h1}>
+          My Skills
+          </span>
+          <div >
+            <p>I&apos;m proficient in:</p>
+            <ul style={{textAlign: "left"}}>
+              <li><strong>Languages:</strong> C++, Python, JavaScript (including p5.js and p5play).</li>
+              <li><strong>Frameworks:</strong> React and Next.js, thats how i made this webpage. </li>
+              <li><strong>Tools:</strong> Git/GitHub, Linux command line.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section className={styles.section}>
+        <div className={styles.content}>
+          <span className={styles.h1}>
+            Projects & Research
+          </span>
+          <div>
+            <p>I love working on projects that combine creativity, problem-solving, and software development. Some of my personal projects include:</p>
+            <ul style={{ textAlign: "left" }}>
+              <li>
+                <strong>LED Matrix Controller:</strong> A Python client that allows me to control my LED matrix remotely over the internet from my PC.
+              </li>
+              <li>
+                <strong>Robot Arm Controller:</strong> A Python program that lets me control a robot arm over the internet using a PC Panel media controller with knobs and sliders. I handle raw USB input from the panel and translate it into movement commands.
+              </li>
+              <li>
+                <strong>Game Development:</strong> A game built using p5play and JavaScript, showcasing my love for game design and interactive programming.
+              </li>
+              <li>
+                <strong>Creative Programming:</strong> Various visual programming experiments, including an A* pathfinding visualization.
+              </li>
+              <li>
+                <strong>Portfolio Website:</strong> The very website you're on, built with React and Next.js.
+              </li>
+              <li>
+                <strong>Research in Explainable AI (XAI):</strong> Contributed to research exploring transparency in artificial intelligence.
+              </li>
+            </ul>
+            <p>Along with these, I’ve worked on numerous smaller projects, mostly in <strong>Python</strong> and <strong>JavaScript</strong>, though I am also proficient in <strong>C++</strong>. Check out my <a href="#">Portfolio</a> to explore more of my work!</p>
+          </div>
         </div>
       </section>
       <section className={styles.section}>
@@ -73,12 +128,6 @@ const Page = () => {
       <Link href="https://karquilla.github.io/UFO-game/" >
         <button className={styles.content} >Cosmic Chaos 	&#40;game&#41;</button>
       </Link>
-      </section>
-      <section className={styles.section}>
-        <span className={styles.content}>Keep scrolling for more animations!</span>
-      </section>
-      <section className={styles.section}>
-        <span className={styles.content}>Keep scrolling for more animations!</span>
       </section>
     <Analytics />
     </ParallaxBackground>
