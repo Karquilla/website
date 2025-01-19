@@ -101,7 +101,7 @@ const Page = () => {
                 I handle raw USB input from the panel and translate it into movement commands.</li>
               <li><p className={styles.h2}>Game Development:</p> A game built using p5play and JavaScript, showcasing my love for game design and interactive programming.</li>
               <li><p className={styles.h2}>Creative Programming:</p> Various visual programming experiments, including an A* pathfinding visualization.</li>
-              <li><p className={styles.h2}>Portfolio Website:</p> The very website you're on, built with React and Next.js.</li>
+              <li><p className={styles.h2}>Portfolio Website:</p> The very website you&apos;re on, built with React and Next.js.</li>
               <li style={{ marginBottom: "30px" }}><p className={styles.h2}>Research in Explainable AI (XAI):</p> Contributed to research exploring transparency in artificial intelligence.</li>
             </ul>
             <p style={{textAlign: 'center'}}>Along with these, I&apos;ve worked on numerous smaller projects, mostly in <strong>Python</strong> and <strong>JavaScript</strong>, though I am also proficient in <strong>C++</strong>. Check out my <a href="#">Portfolio</a> to explore more of my work!</p>
