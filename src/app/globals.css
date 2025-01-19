@@ -6,8 +6,6 @@
   --background: #171717;
   --foreground: #ffffff;
   --secondary: #444444;
-  --font-arcade-out: var(--font-arcade-out);
-  --font-arcade-k: var(--font-arcade-k)
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -20,6 +18,6 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif, var(--font-arcade-out);
+  font-family:  Arial, Helvetica, sans-serif,var(--font-sublima-bold), var(--font-sublima-light), var(--font-arcade-out), var(--font-arcade-k), ;
   margin-bottom: 100px;
 }

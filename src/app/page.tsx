@@ -15,7 +15,7 @@ const Page = () => {
   //};
 
   useEffect(() => {
-    const contents = document.querySelectorAll<HTMLElement>(`.${styles.content}`);
+    const contents = document.querySelectorAll<HTMLElement>(`.${styles.section}`);
 
     // Function to handle observing entries
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
@@ -29,8 +29,8 @@ const Page = () => {
     };
 
     const observer = new IntersectionObserver(handleIntersection, {
-      threshold: 0.5, // Trigger when 50% of the element is visible
-      rootMargin: '0px 0px -5% 0px', // Shifts the trigger point to the middle of the viewport
+      threshold: [0.25], // Trigger when 50% of the element is visible
+      
     });
 
     contents.forEach((content) => {
@@ -53,7 +53,7 @@ const Page = () => {
         <div className={styles.content} style={{
         }}>
           <div className={styles.h1}>Hello, My name is Kyle Arquilla!</div>
-            <p>
+            <p style={{fontFamily: "var(--font-sublima-light)"}}>
               I&apos;m a computer science student at Kent State University with a passion for programming and computers.
             </p>
           </div>
@@ -66,9 +66,9 @@ const Page = () => {
           <div className={styles.list}>
             <p style={{marginBottom: '20px', textAlign: 'center'}}>I enjoy experimenting with code and creating fun projects. Some of my favorite ways to spend my free time include:</p>
             <ul >
-              <li><strong>Creative Programming:</strong> Building &nbsp;&nbsp;&nbsp;&nbsp;visualizations and experimenting with &nbsp;&nbsp;&nbsp;&nbsp;interactive designs.</li>
-              <li><strong>Game Development:</strong> Designing and coding &nbsp;&nbsp;&nbsp;&nbsp;engaging games.</li>
-              <li><strong>Skill Building:</strong> Continuously improving my &nbsp;&nbsp;&nbsp;&nbsp;coding and problem-solving abilities.</li>
+              <li><strong className={styles.h2}>Creative Programming:</strong> Building visualizations and experimenting with interactive designs.</li>
+              <li><strong className={styles.h2}>Game Development:</strong> Designing and coding engaging games.</li>
+              <li><strong className={styles.h2}>Skill Building:</strong> Continuously improving my coding and problem-solving abilities.</li>
             </ul>
           </div>
         </div>
@@ -78,44 +78,33 @@ const Page = () => {
           <span className={styles.h1}>
           My Skills
           </span>
-          <div >
-            <p>I&apos;m proficient in:</p>
+          <div className={styles.list}>
+            <p style={{marginBottom: '20px', textAlign: 'center'}}>I&apos;m proficient in:</p>
             <ul style={{textAlign: "left"}}>
-              <li><strong>Languages:</strong> C++, Python, JavaScript (including p5.js and p5play).</li>
-              <li><strong>Frameworks:</strong> React and Next.js, thats how i made this webpage. </li>
-              <li><strong>Tools:</strong> Git/GitHub, Linux command line.</li>
+              <li><p className={styles.h2}>Languages:</p> C++, Python, JavaScript (including p5.js and p5play).</li>
+              <li><p className={styles.h2}>Frameworks:</p> React and Next.js, thats how i made this webpage. </li>
+              <li><p className={styles.h2}>Tools:</p> Git/GitHub, Linux command line.</li>
             </ul>
           </div>
         </div>
       </section>
       <section className={styles.section}>
-        <div className={styles.content}>
+        <div className={styles.content} style={{ marginBottom: "100px" }}>
           <span className={styles.h1}>
             Projects & Research
           </span>
-          <div>
-            <p>I love working on projects that combine creativity, problem-solving, and software development. Some of my personal projects include:</p>
+          <div className={styles.list}>
+            <p style={{marginBottom: '20px', textAlign: 'center'}}>I love working on projects that combine creativity, problem-solving, and software development. Some of my personal projects include:</p>
             <ul style={{ textAlign: "left" }}>
-              <li>
-                <strong>LED Matrix Controller:</strong> A Python client that allows me to control my LED matrix remotely over the internet from my PC.
-              </li>
-              <li>
-                <strong>Robot Arm Controller:</strong> A Python program that lets me control a robot arm over the internet using a PC Panel media controller with knobs and sliders. I handle raw USB input from the panel and translate it into movement commands.
-              </li>
-              <li>
-                <strong>Game Development:</strong> A game built using p5play and JavaScript, showcasing my love for game design and interactive programming.
-              </li>
-              <li>
-                <strong>Creative Programming:</strong> Various visual programming experiments, including an A* pathfinding visualization.
-              </li>
-              <li>
-                <strong>Portfolio Website:</strong> The very website you're on, built with React and Next.js.
-              </li>
-              <li>
-                <strong>Research in Explainable AI (XAI):</strong> Contributed to research exploring transparency in artificial intelligence.
-              </li>
+              <li><p className={styles.h2}>LED Matrix Controller:</p> A Python client that allows me to control my LED matrix remotely over the internet from my PC.</li>
+              <li><p className={styles.h2}>Robot Arm Controller:</p> A Python program that lets me control a robot arm over the internet using a PC Panel media controller with knobs and sliders. 
+                I handle raw USB input from the panel and translate it into movement commands.</li>
+              <li><p className={styles.h2}>Game Development:</p> A game built using p5play and JavaScript, showcasing my love for game design and interactive programming.</li>
+              <li><p className={styles.h2}>Creative Programming:</p> Various visual programming experiments, including an A* pathfinding visualization.</li>
+              <li><p className={styles.h2}>Portfolio Website:</p> The very website you're on, built with React and Next.js.</li>
+              <li style={{ marginBottom: "30px" }}><p className={styles.h2}>Research in Explainable AI (XAI):</p> Contributed to research exploring transparency in artificial intelligence.</li>
             </ul>
-            <p>Along with these, I’ve worked on numerous smaller projects, mostly in <strong>Python</strong> and <strong>JavaScript</strong>, though I am also proficient in <strong>C++</strong>. Check out my <a href="#">Portfolio</a> to explore more of my work!</p>
+            <p style={{textAlign: 'center'}}>Along with these, I’ve worked on numerous smaller projects, mostly in <strong>Python</strong> and <strong>JavaScript</strong>, though I am also proficient in <strong>C++</strong>. Check out my <a href="#">Portfolio</a> to explore more of my work!</p>
           </div>
         </div>
       </section>
