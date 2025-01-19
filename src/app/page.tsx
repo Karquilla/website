@@ -96,6 +96,7 @@ const Page = () => {
           <div className={styles.list}>
             <p style={{marginBottom: '20px', textAlign: 'center'}}>I love working on projects that combine creativity, problem-solving, and software development. Some of my personal projects include:</p>
             <ul style={{ textAlign: "left" }}>
+<<<<<<< HEAD
               <li><p className={styles.h2}>LED Matrix Controller:</p> A Python client that allows me to control my LED matrix remotely over the internet from my PC.</li>
               <li><p className={styles.h2}>Robot Arm Controller:</p> A Python program that lets me control a robot arm over the internet using a PC Panel media controller with knobs and sliders. 
                 I handle raw USB input from the panel and translate it into movement commands.</li>
@@ -103,6 +104,26 @@ const Page = () => {
               <li><p className={styles.h2}>Creative Programming:</p> Various visual programming experiments, including an A* pathfinding visualization.</li>
               <li><p className={styles.h2}>Portfolio Website:</p> The very website you're on, built with React and Next.js.</li>
               <li style={{ marginBottom: "30px" }}><p className={styles.h2}>Research in Explainable AI (XAI):</p> Contributed to research exploring transparency in artificial intelligence.</li>
+=======
+              <li>
+                <strong>LED Matrix Controller:</strong> A Python client that allows me to control my LED matrix remotely over the internet from my PC.
+              </li>
+              <li>
+                <strong>Robot Arm Controller:</strong> A Python program that lets me control a robot arm over the internet using a PC Panel media controller with knobs and sliders. I handle raw USB input from the panel and translate it into movement commands.
+              </li>
+              <li>
+                <strong>Game Development:</strong> A game built using p5play and JavaScript, showcasing my love for game design and interactive programming.
+              </li>
+              <li>
+                <strong>Creative Programming:</strong> Various visual programming experiments, including an A* pathfinding visualization.
+              </li>
+              <li>
+                <strong>Portfolio Website:</strong> The very website you&apos;re on, built with React and Next.js.
+              </li>
+              <li>
+                <strong>Research in Explainable AI (XAI):</strong> Contributed to research exploring transparency in artificial intelligence.
+              </li>
+>>>>>>> 40103da84a3fbc365375870a151fcaf331576e68
             </ul>
             <p style={{textAlign: 'center'}}>Along with these, I’ve worked on numerous smaller projects, mostly in <strong>Python</strong> and <strong>JavaScript</strong>, though I am also proficient in <strong>C++</strong>. Check out my <a href="#">Portfolio</a> to explore more of my work!</p>
           </div>
