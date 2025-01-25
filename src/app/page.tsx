@@ -1,10 +1,12 @@
 'use client';
 import { useEffect } from 'react';
 import ParallaxBackground from '@/components/ParallaxSpace'; 
+import ResumeDownload from '@/components/DLButton'; 
 
 import Link from 'next/link';
 import styles from '../app/app.module.css';
 import { Analytics } from "@vercel/analytics/react"
+
 
 
 const Page = () => {
@@ -45,10 +47,14 @@ const Page = () => {
   return (
     
     <ParallaxBackground>
+       <ResumeDownload />
       <section style={{
-        paddingTop: '20vh',
+        paddingTop: '10vh',
       }}>
+      
       </section>
+      
+     
       <section className={styles.section}>
         <div className={styles.content} style={{
         }}>
@@ -107,16 +113,6 @@ const Page = () => {
             <p style={{textAlign: 'center'}}>Along with these, I’ve worked on numerous smaller projects, mostly in <strong>Python</strong> and <strong>JavaScript</strong>, though I am also proficient in <strong>C++</strong>. Check out my <a href="#">Portfolio</a> to explore more of my work!</p>
           </div>
         </div>
-      </section>
-      <section className={styles.section}>
-      <Link href="/AStar">
-        <button className={styles.content} >A-Star Path Finder</button>
-      </Link>
-      </section>
-      <section className={styles.section}>
-      <Link href="https://karquilla.github.io/UFO-game/" >
-        <button className={styles.content} >Cosmic Chaos 	&#40;game&#41;</button>
-      </Link>
       </section>
     <Analytics />
     </ParallaxBackground>

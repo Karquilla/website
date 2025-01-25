@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.downloadButton {
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    background-image: url('/button1.png'); /* Use image as background */
+    background-size: cover;
+    background-position: center;
+    width: 200px; /* Adjust to match image size */
+    height: 100px; /* Adjust to match image size */
+    color: #697268;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: var(--font-arcade-k), sans-serif;
+    text-decoration: none;
+    text-align: center;
+    margin: 20px;
+    margin-right: 0px;
+}

@@ -53,7 +53,11 @@ export default function RootLayout({
         className={`${sublimaBold.variable} ${sublimaLight.variable} ${geistSans.variable} ${geistMono.variable} ${arcadeOut.variable} ${arcadeK.variable}  antialiased`}
       >
         {children}
+        <footer>
+          © 2025 Kyle Arquilla. All rights reserved. Artwork by Melissa Douglas.
+        </footer>
       </body>
+      
     </html>
   );
 }

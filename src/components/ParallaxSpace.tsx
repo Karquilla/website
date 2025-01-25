@@ -43,14 +43,27 @@ export default function ParallaxBackground({
         }}
       >
         <img
-          src="/NightSkyV2xx.png" // make sure it's in /public
+          src="/NightSkyV2xx.png" 
           alt="Night Sky"
           style={{
             position: 'absolute',
             top: 0,
             left: 0,
             //subtract scrollY * factor so it moves *less* than the scrolling content.
-            transform: `translateY(${-scrollY * factor}px)`,
+            transform: `translateY(${-scrollY * (factor * 1.5)}px)`,
+            width: '100%',
+            height: 'auto',
+          }}
+        />
+        <img
+          src="\NightSkyTransBack.png" 
+          alt="Night Sky transpearent"
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            //subtract scrollY * factor so it moves *less* than the scrolling content.
+            transform: `translateY(${-scrollY * (factor )}px)`,
             width: '100%',
             height: 'auto',
           }}

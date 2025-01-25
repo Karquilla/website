@@ -15,8 +15,8 @@ const MovingImage: React.FC = () => {
   const requestIdRef = useRef<number>(0);
 
   // Adjustable parameters
-  const arcTightness = 0.54; // Adjust arc curvature (0 = direct line, 1 = full arc)
-  const centerSmoothFactor = 0.25; // Controls how fast the center shifts
+  const arcTightness = 0.54; // arc curvature (0 = direct line, 1 = full arc)
+  const centerSmoothFactor = 0.25; // how fast the center shifts
 
   const circleCenterRef = useRef<Position>({ x: position.x, y: position.y });
 
@@ -39,17 +39,13 @@ const MovingImage: React.FC = () => {
         const mx = mouseRef.current.x;
         const my = mouseRef.current.y;
 
-        // -----------------------------------------
-        // A) If already very close, snap to target
-        // -----------------------------------------
+        // If already very close, snap to target
         const distToMouse = Math.hypot(mx - px, my - py);
         if (distToMouse < 0.5) {
           return { x: mx, y: my };
         }
 
-        // -----------------------------------------
-        // B) Compute Smoothed Circle Center
-        // -----------------------------------------
+        // Compute Smoothed Circle Center
         const targetH = px + arcTightness * (mx - px);
         const targetK = py + arcTightness * (my - py);
 
@@ -65,9 +61,7 @@ const MovingImage: React.FC = () => {
         let r = Math.sqrt((mx - h) ** 2 + (my - k) ** 2);
         r = Math.min(r, maxRadius);
 
-        // -----------------------------------------
-        // C) Compute Angles
-        // -----------------------------------------
+        // Compute Angles
         const startAngle = Math.atan2(py - k, px - h);
         const endAngle = Math.atan2(my - k, mx - h);
 
@@ -80,9 +74,7 @@ const MovingImage: React.FC = () => {
         let angleDiff = endAngle - angleRef.current;
         angleDiff = ((angleDiff + Math.PI) % (2 * Math.PI)) - Math.PI;
 
-        // -----------------------------------------
-        // D) Move by a small angular step
-        // -----------------------------------------
+        // Move by a small angular step
         const angularSpeed = 1.0; // Adjust speed
         const maxStep = angularSpeed * delta;
         const angleStep = Math.abs(angleDiff) < maxStep
@@ -91,9 +83,7 @@ const MovingImage: React.FC = () => {
 
         angleRef.current += angleStep;
 
-        // -----------------------------------------
-        // E) Compute New Position on Arc
-        // -----------------------------------------
+        // Compute New Position on Arc
         const newX = h + r * Math.cos(angleRef.current);
         const newY = k + r * Math.sin(angleRef.current);
 
