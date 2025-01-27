@@ -1,16 +1,16 @@
 
 import Astar from "../../components/aStar";
 import styles from "./AstarPage.module.css"
-
-// grid_container need an outer and inner so backgroubn
+import ParallaxBackground from "@/components/ParallaxSpace";
 
 export default function page() {
   return (
-    <div>
-    <div className={styles.layout}>
-          <div className={styles.content}> <Astar /> </div>
-      
-    </div>
-    </div>
+    <ParallaxBackground>
+      <div>
+        <div className={styles.layout}>
+            <div className={styles.content}> <Astar /> </div>
+        </div>
+      </div>
+    </ParallaxBackground>
   );
 }

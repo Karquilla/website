@@ -19,5 +19,5 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family:  Arial, Helvetica, sans-serif,var(--font-sublima-bold), var(--font-sublima-light), var(--font-arcade-out), var(--font-arcade-k), ;
-  margin-bottom: 100px;
+  margin-bottom: 5px;
 }

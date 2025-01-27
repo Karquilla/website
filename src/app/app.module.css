@@ -1,8 +1,8 @@
 /* app.module.css */
 
 .section {
-    padding: 200px;  /*Increase padding to make each section taller */
-    /*margin-top: 25vh;  Add margin to create more space between sections */
+    padding: auto;  /*Increase padding to make each section taller */
+    margin-bottom: 200px; /* Add margin to create more space between sections */
     text-align: center;
     justify-content: center;
     background-color: transparent;  /*Light background color for contrast */
@@ -19,7 +19,7 @@
     display: text;
     
     line-height: '1.6';
-    margin: 0 auto;
+    margin: auto;
     max-width: 600px;
     font-size: 26px;
     
