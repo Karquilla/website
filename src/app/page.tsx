@@ -1,7 +1,7 @@
 'use client';
 import { useEffect } from 'react';
 import ParallaxBackground from '@/components/ParallaxSpace'; 
-import ResumeDownload from '@/components/DLButton'; 
+import ButtonSetHome from '@/components/ButtonsHome'; 
 
 import styles from '../app/app.module.css';
 import { Analytics } from "@vercel/analytics/react"
@@ -46,17 +46,12 @@ const Page = () => {
   return (
     
     <ParallaxBackground>
-       <ResumeDownload />
+       <ButtonSetHome />
       <section style={{
-        paddingTop: '10vh',
-      }}>
-      
+        paddingTop: '10vh' }}>
       </section>
-      
-     
       <section className={styles.section}>
-        <div className={styles.content} style={{
-        }}>
+        <div className={styles.content}>
           <div className={styles.h1}>Hello, My name is Kyle Arquilla!</div>
             <p style={{fontFamily: "var(--font-sublima-light)"}}>
               I&apos;m a computer science student at Kent State University with a passion for programming and computers.
