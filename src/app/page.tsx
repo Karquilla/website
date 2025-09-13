@@ -1,5 +1,4 @@
 'use client';
-import { useEffect } from 'react';
 import ParallaxBackground from '@/components/ParallaxSpace'; 
 import ButtonSetHome from '@/components/ButtonsHome'; 
 
