@@ -6,50 +6,23 @@ import ButtonSetHome from '@/components/ButtonsHome';
 import styles from '../app/app.module.css';
 import { Analytics } from "@vercel/analytics/react"
 
-
+import useCenterReveal from '@/components/fadein_effect';
 
 const Page = () => {
-
+  useCenterReveal(`.${styles.section}`);
   //const p5button = () => {
   //  // Some logic before navigating
   //  return ;
   //};
-
-  useEffect(() => {
-    const contents = document.querySelectorAll<HTMLElement>(`.${styles.section}`);
-
-    // Function to handle observing entries
-    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add(styles.show);
-        } else {
-          entry.target.classList.remove(styles.show); // Remove the class when it leaves the viewport
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(handleIntersection, {
-      threshold: [0.25], // Trigger when 50% of the element is visible
-      
-    });
-
-    contents.forEach((content) => {
-      observer.observe(content);
-    });
-
-    return () => {
-      contents.forEach((content) => observer.unobserve(content));
-    };
-  }, []);
-
   return (
     
     <ParallaxBackground>
-       <ButtonSetHome />
-      <section style={{
-        paddingTop: '10vh' }}>
-      </section>
+      
+        <header>
+          <ButtonSetHome />
+        </header>
+      <section className={styles.hero}>
+      
       <section className={styles.section}>
         <div className={styles.content}>
           <div className={styles.h1}>Hello, My name is Kyle Arquilla!</div>
@@ -57,7 +30,7 @@ const Page = () => {
               I&apos;m a computer science student at Kent State University with a passion for programming and computers.
             </p>
           </div>
-      </section>
+      </section></section>
       <section className={styles.section}>
         <div className={styles.content}>
           <span className={styles.h1}>
