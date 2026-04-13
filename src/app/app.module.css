@@ -49,6 +49,44 @@
   font-family: var(--font-sublima-bold), sans-serif !important;
 }
 
+.navBanner {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  padding: 16px 24px;
+  background: linear-gradient(
+    180deg,
+    rgba(23, 23, 23, 0.95) 0%,
+    rgba(23, 23, 23, 0.7) 100%
+  );
+  border-bottom: 1px solid rgba(105, 114, 104, 0.35);
+  backdrop-filter: blur(4px);
+}
+
+.navLinks {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.navLink {
+  color: #697268;
+  font-family: var(--font-arcade-k), sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid rgba(105, 114, 104, 0.6);
+  border-radius: 999px;
+  padding: 10px 16px;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.navLink:hover {
+  color: #d3d5d4;
+  border-color: #d3d5d4;
+  background-color: rgba(105, 114, 104, 0.2);
+}
 
 /* Centers the top header/buttons vertically in the viewport */
 .hero {
