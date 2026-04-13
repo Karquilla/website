@@ -1,6 +1,6 @@
 'use client';
 import ParallaxBackground from '@/components/ParallaxSpace'; 
-import ButtonSetHome from '@/components/ButtonsHome'; 
+import Link from 'next/link';
 
 import styles from '../app/app.module.css';
 import { Analytics } from "@vercel/analytics/react"
@@ -17,8 +17,18 @@ const Page = () => {
     
     <ParallaxBackground>
       
-        <header>
-          <ButtonSetHome />
+        <header className={styles.navBanner}>
+          <nav className={styles.navLinks}>
+            <a href="/Kyle_Arquilla_Resume.pdf" download="/Kyle_Arquilla_Resume.pdf" className={styles.navLink}>
+              Resume
+            </a>
+            <Link href="/AStar" className={styles.navLink}>
+              AStar
+            </Link>
+            <a href="https://karquilla.github.io/UFO-game/" className={styles.navLink}>
+              Cosmic Chaos
+            </a>
+          </nav>
         </header>
       <section className={styles.hero}>
       
